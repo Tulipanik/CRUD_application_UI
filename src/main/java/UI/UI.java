@@ -42,30 +42,32 @@ public class UI {
         String newMode = "";
 
         switch (mode) {
-            case "1":
+            case "1" -> {
                 System.out.println("1- Wyświetl wszystkie notatki");
                 System.out.println("2- Wyświetl notatkę o wybranym id");
                 System.out.println("3- Wyświetl wszystkie notatki grupy");
 
                 newMode = readFromUser();
                 choosingReadStage(newMode);
-
-                break;
-            case "2":
+            }
+            case "2" -> {
                 System.out.println("1- Dodaj 1 notatkę");
                 System.out.println("2- Dodaj wiele notatek");
 
                 newMode = readFromUser();
                 choosingCreateStage(newMode);
-
-                break;
-            case "3":
+            }
+            case "3" -> {
                 System.out.println("Podaj id notatki, którą chcesz edytować:");
                 String id = readFromUser();
 
-                break;
-            case "4":
-                System.out.println("1 - Wpisz tytuł notatki, którą chcesz usunąć");
+                System.out.println("Twoja notatka przed edycją: ");
+                printJsonAsTable("[" + requests.getTitleNote("/" + id)+ "]");
+
+                choosingModify(id);
+            }
+            case "4" -> {
+                System.out.println("1 - Wpisz id notatki, którą chcesz usunąć");
                 System.out.println("2 - Usuń wszystkie notatki");
                 System.out.println("3- Usuń wszystkie notatki grupy");
 
@@ -84,11 +86,19 @@ public class UI {
             default -> {
                 System.out.println("Podałeś nieprawidłową operację!");
                 startMenu();
-                newMode = readFromUser();
-                choosingStartStage(newMode);
-
-                break;
+            }
         }
+    }
+
+    private void choosingModify(String id) {
+        System.out.println("Podaj nowy tytuł notatki: ");
+        String newTitle = readFromUser();
+        System.out.println("Podaj nową treść notatki: ");
+        String newContent = readFromUser();
+        requests.updateNote(id, newTitle, newContent, groupId);
+        System.out.println("Twoja notatka po edycji: ");
+        printJsonAsTable("[" + requests.getTitleNote("/" + id) + "]");
+        startMenu();
     }
 
     private void choosingReadStage(String mode) {
@@ -163,7 +173,7 @@ public class UI {
     private void choosingDeleteStage(String mode) {
 
         switch (mode) {
-            case "1":
+            case "1" -> {
                 System.out.println("Podaj id notatki, którą chcesz usunąć:");
                 String id = readFromUser();
                 boolean ok = requests.deleteChosenNote(id);
@@ -195,8 +205,7 @@ public class UI {
             default -> {
                 System.out.println("Wybrano niepoprawną opcję!");
                 startMenu();
-                String newMode = readFromUser();
-                choosingStartStage(newMode);
+            }
         }
     }
 
