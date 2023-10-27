@@ -1,18 +1,26 @@
 package UI;
 
 import UI.HttpRequest.HttpRequest;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
+import java.util.*;
 
 public class UI {
 
     private final HttpRequest requests = new HttpRequest();
+    private String groupId = "";
 
     public void Start() {
         System.out.println("Witamy w aplikacji Notatki!");
+        System.out.println("Wpisz id grupy:");
+        groupId = readFromUser();
+        System.out.println("Id grupy:" + groupId);
+
         startMenu();
 
     }
@@ -23,6 +31,8 @@ public class UI {
         System.out.println("2- Tworzenie");
         System.out.println("3- Modyfikacja");
         System.out.println("4- Usuwanie");
+        System.out.println("5- Zmień grupę");
+        System.out.println("6- Wyłącz aplikację");
 
         String mode = readFromUser();
         choosingStartStage(mode);
@@ -35,6 +45,7 @@ public class UI {
             case "1":
                 System.out.println("1- Wyświetl wszystkie notatki");
                 System.out.println("2- Wyświetl notatkę o wybranym id");
+                System.out.println("3- Wyświetl wszystkie notatki grupy");
 
                 newMode = readFromUser();
                 choosingReadStage(newMode);
@@ -56,12 +67,21 @@ public class UI {
             case "4":
                 System.out.println("1 - Wpisz tytuł notatki, którą chcesz usunąć");
                 System.out.println("2 - Usuń wszystkie notatki");
+                System.out.println("3- Usuń wszystkie notatki grupy");
 
                 newMode = readFromUser();
                 choosingDeleteStage(newMode);
-
-                break;
-            default:
+            }
+            case "5" -> {
+                System.out.println("Podaj nowe id grupy");
+                groupId = readFromUser();
+                System.out.println("Zmieniono id grupy na:" + groupId);
+                startMenu();
+            }
+            case "6" -> {
+                System.exit(0);
+            }
+            default -> {
                 System.out.println("Podałeś nieprawidłową operację!");
                 startMenu();
                 newMode = readFromUser();
@@ -76,13 +96,18 @@ public class UI {
         switch (mode) {
             case "1" -> {
                 System.out.println("To są wszystkie notatki");
-                System.out.println(requests.getAllNotes());
+                printJsonAsTable(requests.getAllNotes());
                 startMenu();
             }
             case "2" -> {
                 System.out.println("Wprowadź id notatki");
                 String id = readFromUser();
-                System.out.println(requests.getTitleNote("/" + id));
+                printJsonAsTable("[" +requests.getTitleNote("/" + id) + "]");
+                startMenu();
+            }
+            case "3" -> {
+                System.out.println("To są wszystkie notatki grupy");
+                printJsonAsTable(requests.getGroupNotes(groupId));
                 startMenu();
             }
             default -> {
@@ -115,7 +140,6 @@ public class UI {
             default -> {
                 System.out.println("Podałeś nieprawidłową operację!");
                 startMenu();
-                break;
             }
 
         }
@@ -129,7 +153,7 @@ public class UI {
         String content = readFromUser();
 
         try {
-            System.out.println(requests.add(title, content));
+            printJsonAsTable(requests.add(title, content, groupId));
             System.out.println("Pomyślnie dodano nową notatkę :D");
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
@@ -142,12 +166,33 @@ public class UI {
             case "1":
                 System.out.println("Podaj id notatki, którą chcesz usunąć:");
                 String id = readFromUser();
-
-
-            case "3":
-
-
-            default:
+                boolean ok = requests.deleteChosenNote(id);
+                if (ok) {
+                    System.out.println("Pomyślnie usunięto notatkę");
+                    startMenu();
+                }
+                System.out.println("Coś zrobiłeś źle drogi użytkownku");
+                startMenu();
+            }
+            case "2" -> {
+                boolean ok = requests.deleteAllNotes();
+                if (ok) {
+                    System.out.println("Pomyślnie usunięto wszystkie notatki");
+                    startMenu();
+                }
+                System.out.println("Coś zrobiłeś źle drogi użytkownku");
+                startMenu();
+            }
+            case "3" -> {
+                boolean ok = requests.deleteAllGroupNotes(groupId);
+                if (ok) {
+                    System.out.println("Usunięto wszystkie notatki w grupie " + groupId);
+                    startMenu();
+                }
+                System.out.println("Coś zrobiłeś źle drogi użytkownku");
+                startMenu();
+            }
+            default -> {
                 System.out.println("Wybrano niepoprawną opcję!");
                 startMenu();
                 String newMode = readFromUser();
@@ -163,4 +208,60 @@ public class UI {
             throw new RuntimeException(e);
         }
     }
-}
+
+    private static void printJsonAsTable(String jsonData) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode rootNode = objectMapper.readTree(jsonData);
+
+            if (rootNode.isArray() && rootNode.size() > 0) {
+                JsonNode firstObject = rootNode.get(0);
+                List<String> headers = new ArrayList<>();
+                for (Iterator<Map.Entry<String, JsonNode>> fields = firstObject.fields(); fields.hasNext(); ) {
+                    Map.Entry<String, JsonNode> field = fields.next();
+                    headers.add(field.getKey());
+                }
+
+                List<List<String>> rows = new ArrayList<>();
+
+                for (JsonNode node : rootNode) {
+                    List<String> row = new ArrayList<>();
+                    for (String header : headers) {
+                        JsonNode value = node.get(header);
+                        row.add(value != null ? value.asText() : "");
+                    }
+                    rows.add(row);
+                }
+
+                int[] columnWidths = new int[headers.size()];
+                Arrays.fill(columnWidths, 0);
+
+                for (List<String> row : rows) {
+                    for (int i = 0; i < row.size(); i++) {
+                        int length = row.get(i).length();
+                        if (length > columnWidths[i]) {
+                            columnWidths[i] = length;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < headers.size(); i++) {
+                    System.out.printf("%-" + (columnWidths[i] + 2) + "s", headers.get(i));
+                }
+                System.out.println();
+
+                for (List<String> row : rows) {
+                    for (int i = 0; i < row.size(); i++) {
+                        System.out.printf("%-" + (columnWidths[i] + 2) + "s", row.get(i));
+                    }
+                    System.out.println();
+                }
+            } else {
+                System.out.println("Nie ma takich notatek");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+ }
+ 
