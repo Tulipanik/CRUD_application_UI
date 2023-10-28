@@ -1,8 +1,10 @@
-package UI;
+package org.example.UI;
 
-import UI.HttpRequest.HttpRequest;
+import org.example.Services.HttpRequestService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.example.Services.NotesService;
+import org.example.Services.NotesServiceInterface;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +14,7 @@ import java.util.*;
 
 public class UI {
 
-    private final HttpRequest requests = new HttpRequest();
+    private final NotesServiceInterface requests = new NotesService();
     private String groupId = "";
 
     public void Start() {

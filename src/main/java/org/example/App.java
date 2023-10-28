@@ -1,6 +1,6 @@
 package org.example;
 
-import UI.UI;
+import org.example.UI.UI;
 
 /**
  * Hello world!

@@ -1,22 +1,21 @@
-package UI.HttpRequest;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+package org.example.Services;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
 
-public class HttpRequest {
+public class HttpRequestService implements HttpRequestServiceInterface {
 
-    private final String URLAddress = "http://localhost:8080/notes";
+    private String URLAddress;
     HttpURLConnection connection = null;
 
-    private String getRequest ( String endpoint) {
+    public HttpRequestService(String URLAddress) {
+        this.URLAddress = URLAddress;
+    }
+
+    public String getRequest (String endpoint) {
         try {
             URL url = new URL(URLAddress + endpoint);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -40,7 +39,7 @@ public class HttpRequest {
         }
     }
 
-    private String postRequest (String endpoint, String json) {
+    public String postRequest (String endpoint, String json) {
         try {
             URL url = new URL(URLAddress + endpoint);
 
@@ -73,7 +72,7 @@ public class HttpRequest {
         }
     }
 
-    private boolean putRequest (String endpoint, String json) {
+    public boolean putRequest (String endpoint, String json) {
         try {
             URL url = new URL(URLAddress + endpoint);
 
@@ -97,7 +96,7 @@ public class HttpRequest {
         }
     }
 
-    private boolean deleteRequest (String endpoint) {
+    public boolean deleteRequest (String endpoint) {
         try {
             URL url = new URL(URLAddress + endpoint);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -111,59 +110,5 @@ public class HttpRequest {
         }
     }
 
-    public String getAllNotes () {
-        return getRequest("");
-    }
-
-    public String getTitleNote (String id) {
-        return getRequest(id);
-    }
-
-    public String getGroupNotes (String userId) {
-        return  getRequest("/user/" + userId);
-    }
-
-    public String add (String title, String content, String groupId) throws MalformedURLException {
-        HashMap <String, String> object = new HashMap<>();
-        object.put("title", title);
-        object.put("content", content);
-        object.put("userId", groupId);
-        
-        ObjectMapper writer = new ObjectMapper();
-        try {
-            String json = writer.writeValueAsString(object);
-            return postRequest("", json);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public boolean updateNote (String id, String title, String content, String groupId) {
-        HashMap <String, String> object = new HashMap<>();
-        object.put("id", id);
-        object.put("title", title);
-        object.put("content", content);
-        object.put("userId", groupId);
-
-        ObjectMapper writer = new ObjectMapper();
-        try {
-            String json = writer.writeValueAsString(object);
-            return putRequest("/" + id, json);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public boolean deleteChosenNote (String id) {
-        return deleteRequest("/" + id);
-    }
-
-    public boolean deleteAllNotes () {
-        return deleteRequest("");
-    }
-
-    public boolean deleteAllGroupNotes (String groupId) {
-        return deleteRequest("/user/" + groupId);
-    }
 
 }
