@@ -64,7 +64,7 @@ public class UI {
                 String id = readFromUser();
 
                 System.out.println("Twoja notatka przed edycją: ");
-                printJsonAsTable("[" + requests.getTitleNote("/" + id)+ "]");
+                printJsonAsTable("[" + requests.getIdNote(id)+ "]");
 
                 choosingModify(id);
             }
@@ -99,7 +99,7 @@ public class UI {
         String newContent = readFromUser();
         requests.updateNote(id, newTitle, newContent, groupId);
         System.out.println("Twoja notatka po edycji: ");
-        printJsonAsTable("[" + requests.getTitleNote("/" + id) + "]");
+        printJsonAsTable("[" + requests.getIdNote("/" + id) + "]");
         startMenu();
     }
 
@@ -114,7 +114,7 @@ public class UI {
             case "2" -> {
                 System.out.println("Wprowadź id notatki");
                 String id = readFromUser();
-                printJsonAsTable("[" +requests.getTitleNote("/" + id) + "]");
+                printJsonAsTable("[" +requests.getIdNote("/" + id) + "]");
                 startMenu();
             }
             case "3" -> {
@@ -165,7 +165,7 @@ public class UI {
         String content = readFromUser();
 
         try {
-            printJsonAsTable(requests.add(title, content, groupId));
+            requests.add(title, content, groupId);
             System.out.println("Pomyślnie dodano nową notatkę :D");
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);

@@ -11,28 +11,41 @@ public class NotesService implements NotesServiceInterface {
     private final HttpRequestServiceInterface requests = new HttpRequestService("http://localhost:8080/notes");
 
     public String getAllNotes() {
-        return requests.getRequest("");
+        try {
+            return requests.getRequest("");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public String getTitleNote(String id) {
-        return requests.getRequest(id);
+    public String getIdNote(String id){
+        try {
+            return requests.getRequest("/" + id);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public String getGroupNotes(String userId) {
-        return requests.getRequest("/user/" + userId);
+        try {
+            return requests.getRequest("/user/" + userId);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public String add(String title, String content, String groupId) throws MalformedURLException {
+    public boolean add(String title, String content, String groupId) throws MalformedURLException {
         HashMap<String, String> object = new HashMap<>();
         object.put("title", title);
         object.put("content", content);
         object.put("userId", groupId);
 
         ObjectMapper writer = new ObjectMapper();
+
         try {
             String json = writer.writeValueAsString(object);
             return requests.postRequest("", json);
-        } catch (JsonProcessingException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -48,21 +61,32 @@ public class NotesService implements NotesServiceInterface {
         try {
             String json = writer.writeValueAsString(object);
             return requests.putRequest("/" + id, json);
-        } catch (JsonProcessingException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     public boolean deleteChosenNote(String id) {
-        return requests.deleteRequest("/" + id);
+        try {
+            return requests.deleteRequest("/" + id);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public boolean deleteAllNotes() {
-        return requests.deleteRequest("");
+        try {
+            return requests.deleteRequest("");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public boolean deleteAllGroupNotes(String groupId) {
-        return requests.deleteRequest("/user/" + groupId);
+        try {
+            return requests.deleteRequest("/user/" + groupId);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
-
 }
