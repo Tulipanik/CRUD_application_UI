@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 public class HttpRequestService implements HttpRequestServiceInterface {
@@ -13,6 +15,16 @@ public class HttpRequestService implements HttpRequestServiceInterface {
     HttpURLConnection connection = null;
 
     public HttpRequestService(String URLAddress) {
+        if(URLAddress==null){
+            throw new NullPointerException();
+        } else if (URLAddress=="") {
+            throw new IllegalArgumentException();
+        }
+        try{
+            new URL(URLAddress).toURI();
+        }catch(MalformedURLException | URISyntaxException e){
+            throw new IllegalArgumentException();
+        }
         this.URLAddress = URLAddress;
     }
 
