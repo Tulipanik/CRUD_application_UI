@@ -6,6 +6,8 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import static java.net.HttpURLConnection.*;
+
 public class HttpRequestService implements HttpRequestServiceInterface {
 
     private String URLAddress;
@@ -25,7 +27,7 @@ public class HttpRequestService implements HttpRequestServiceInterface {
 
         StringBuilder response = new StringBuilder();
 
-        if (responseCode == 200) {
+        if (responseCode == HTTP_OK) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             String line;
             while ((line = reader.readLine()) != null) {
@@ -53,7 +55,7 @@ public class HttpRequestService implements HttpRequestServiceInterface {
             int responseCode = connection.getResponseCode();
             StringBuilder response = new StringBuilder();
 
-            return responseCode == 201;
+            return responseCode == HTTP_CREATED;
     }
 
     public boolean putRequest (String endpoint, String json) throws Exception{
@@ -71,7 +73,7 @@ public class HttpRequestService implements HttpRequestServiceInterface {
         os.write(input, 0, input.length);
 
         int responseCode = connection.getResponseCode();
-        return responseCode == 201;
+        return responseCode == HTTP_CREATED;
     }
 
     public boolean deleteRequest (String endpoint) throws Exception{
@@ -80,6 +82,6 @@ public class HttpRequestService implements HttpRequestServiceInterface {
         connection.setRequestMethod("DELETE");
 
         int responseCode = connection.getResponseCode();
-        return responseCode == 204;
+        return responseCode == HTTP_NO_CONTENT;
     }
 }
