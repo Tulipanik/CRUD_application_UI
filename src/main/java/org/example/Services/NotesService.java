@@ -35,6 +35,9 @@ public class NotesService implements NotesServiceInterface {
     }
 
     public boolean add(String title, String content, String groupId) throws MalformedURLException {
+        if(!validation(title,content,groupId)){
+            throw new IllegalArgumentException();
+        }
         HashMap<String, String> object = new HashMap<>();
         object.put("title", title);
         object.put("content", content);
@@ -87,6 +90,19 @@ public class NotesService implements NotesServiceInterface {
             return requests.deleteRequest("/user/" + groupId);
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    private boolean validation(String title, String content, String groupId){
+        //NullPointer
+        if(title==null || content==null || groupId==null){
+            return false;
+        }
+        try{
+            Integer.parseInt(groupId);
+            return true;
+        }catch(NumberFormatException e){
+            return false;
         }
     }
 }
