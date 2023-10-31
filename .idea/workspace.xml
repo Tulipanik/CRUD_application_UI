@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6ab5b2a7-885e-4787-9f6c-a023583c8289" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/HttpRequestServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/HttpRequestServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/NotesServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/NotesServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/HttpRequestServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/HttpRequestServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +49,19 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="JUnit.HttpRequestServiceTest">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.App" />
+      <module name="CRUD_application_UI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HttpRequestServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CRUD_application_UI" />
       <extension name="coverage">
@@ -66,7 +77,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpRequestServiceTest.AddCorrectData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HttpRequestServiceTest.AddInCorrectData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CRUD_application_UI" />
       <extension name="coverage">
         <pattern>
@@ -76,13 +87,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
       <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.HttpRequestServiceTest" />
-      <option name="METHOD_NAME" value="AddCorrectData" />
+      <option name="METHOD_NAME" value="AddInCorrectData" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpRequestServiceTest.UrlIsNotValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HttpRequestServiceTest.AddIncorrectUrl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CRUD_application_UI" />
       <extension name="coverage">
         <pattern>
@@ -92,7 +103,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
       <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.HttpRequestServiceTest" />
-      <option name="METHOD_NAME" value="UrlIsNotValid" />
+      <option name="METHOD_NAME" value="AddIncorrectUrl" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -113,29 +124,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotesServiceTest.AddInCorrectGroupIdDataPerm1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.HttpRequest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
-      <option name="METHOD_NAME" value="AddInCorrectGroupIdDataPerm1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.HttpRequestServiceTest" />
+        <item itemvalue="JUnit.HttpRequestServiceTest.AddInCorrectData" />
+        <item itemvalue="JUnit.HttpRequestServiceTest.AddIncorrectUrl" />
+        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.NotesServiceTest" />
-        <item itemvalue="JUnit.NotesServiceTest.AddInCorrectGroupIdDataPerm1" />
-        <item itemvalue="JUnit.HttpRequestServiceTest.AddCorrectData" />
-        <item itemvalue="JUnit.HttpRequestServiceTest.UrlIsNotValid" />
       </list>
     </recent_temporary>
   </component>
@@ -166,17 +161,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java</url>
-          <line>48</line>
+          <line>51</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java</url>
-          <line>95</line>
-          <properties class="org.example.Services.NotesService" method="validation">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="3" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestService.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

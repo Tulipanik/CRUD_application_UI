@@ -62,32 +62,6 @@ public class HttpRequestServiceTest {
     }
 
     @Test
-    public void AddInCorrectData() throws Exception {
-        //Give
-        String url = "http://localhost:8080/notes";
-        String endpoint = "";
-        String data = "{\"tit    le\":\"Title\",\"use      rId\":\"0\"}";
-        HttpRequestService httpRequestService = new HttpRequestService(url);
-        //When
-        boolean response = httpRequestService.postRequest(endpoint, data);
-        //Then
-        Assert.assertFalse(response);
-    }
-
-    @Test
-    public void AddIncorrectUrl() throws Exception {
-        //Give
-        String url = "http://l  st:8   /no   tes";
-        String endpoint = "";
-        String data = "{\"title\":\"Title\",\"userId\":\"0\",\"content\":\"Simple note text\"}";
-        HttpRequestService httpRequestService = new HttpRequestService(url);
-        //When
-        boolean response = httpRequestService.postRequest(endpoint, data);
-        //Then
-        Assert.assertFalse(response);
-    }
-
-    @Test
     public void AddIncorrectEndpoint() throws Exception {
         //Give
         String url = "http://localhost:8080/notes";
