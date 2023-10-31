@@ -1,6 +1,7 @@
 package org.example.HttpRequest.mocks;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -8,7 +9,8 @@ import java.net.URL;
 
 public class MockHttpURLConnection extends HttpURLConnection {
 
-    OutputStream outputStream = new MockOutputStream();
+    MockOutputStream outputStream = new MockOutputStream();
+    MockInputStream inputStream = new MockInputStream();
 
     public MockHttpURLConnection(final int responseCode) throws MalformedURLException {
         super(new URL("http://localhost"));
@@ -42,7 +44,16 @@ public class MockHttpURLConnection extends HttpURLConnection {
         return outputStream;
     }
 
+    @Override
+    public InputStream getInputStream() throws IOException {
+        return inputStream;
+    }
+
+    public void putDataToOutput(String data) throws IOException {
+        inputStream.putDataToOutput(data);
+    }
+
     public MockOutputStream getMockOutputStream() {
-        return (MockOutputStream) outputStream;
+        return outputStream;
     }
 }
