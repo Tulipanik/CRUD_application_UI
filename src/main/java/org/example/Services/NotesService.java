@@ -1,26 +1,28 @@
 package org.example.Services;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 
 public class NotesService implements NotesServiceInterface {
-
-    private final HttpRequestServiceInterface requests = new HttpRequestService("http://localhost:8080/notes");
+    private static final String baseUrl = "http://localhost:8080/notes";
+    private final HttpRequestServiceInterface requests = new HttpRequestService();
 
     public String getAllNotes() {
         try {
-            return requests.getRequest("");
+            URL url = new URL(baseUrl);
+            return requests.getRequest(url);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    public String getIdNote(String id){
+    public String getIdNote(String id) {
         try {
-            return requests.getRequest("/" + id);
+            URL url = new URL(baseUrl + "/" + id);
+            return requests.getRequest(url);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -28,14 +30,15 @@ public class NotesService implements NotesServiceInterface {
 
     public String getGroupNotes(String userId) {
         try {
-            return requests.getRequest("/user/" + userId);
+            URL url = new URL(baseUrl + "/user/" + userId);
+            return requests.getRequest(url);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     public boolean add(String title, String content, String groupId) throws MalformedURLException {
-        if(!validation(title,content,groupId)){
+        if (!validation(title, content, groupId)) {
             throw new IllegalArgumentException();
         }
         HashMap<String, String> object = new HashMap<>();
@@ -46,8 +49,9 @@ public class NotesService implements NotesServiceInterface {
         ObjectMapper writer = new ObjectMapper();
 
         try {
+            URL url = new URL(baseUrl);
             String json = writer.writeValueAsString(object);
-            return requests.postRequest("", json);
+            return requests.postRequest(url, json);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -62,8 +66,9 @@ public class NotesService implements NotesServiceInterface {
 
         ObjectMapper writer = new ObjectMapper();
         try {
+            URL url = new URL(baseUrl + "/" + id);
             String json = writer.writeValueAsString(object);
-            return requests.putRequest("/" + id, json);
+            return requests.putRequest(url, json);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -71,7 +76,8 @@ public class NotesService implements NotesServiceInterface {
 
     public boolean deleteChosenNote(String id) {
         try {
-            return requests.deleteRequest("/" + id);
+            URL url = new URL(baseUrl + "/" + id);
+            return requests.deleteRequest(url);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -79,7 +85,8 @@ public class NotesService implements NotesServiceInterface {
 
     public boolean deleteAllNotes() {
         try {
-            return requests.deleteRequest("");
+            URL url = new URL(baseUrl);
+            return requests.deleteRequest(url);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -87,21 +94,22 @@ public class NotesService implements NotesServiceInterface {
 
     public boolean deleteAllGroupNotes(String groupId) {
         try {
-            return requests.deleteRequest("/user/" + groupId);
+            URL url = new URL(baseUrl + "/user/" + groupId);
+            return requests.deleteRequest(url);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    private boolean validation(String title, String content, String groupId){
+    private boolean validation(String title, String content, String groupId) {
         //NullPointer
-        if(title==null || content==null || groupId==null){
+        if (title == null || content == null || groupId == null) {
             return false;
         }
-        try{
+        try {
             Integer.parseInt(groupId);
             return true;
-        }catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             return false;
         }
     }

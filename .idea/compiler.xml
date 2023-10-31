@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <option name="USE_RELEASE_OPTION" value="false" />
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CRUD_application_UI" />
+        <module name="CrudUI" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="CRUD_application_UI" target="1.14" />
-    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CrudUI" options="--add-exports java.base/sun.net.www.protocol.http=ALL-UNNAMED" />
+    </option>
   </component>
 </project>

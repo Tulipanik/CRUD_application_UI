@@ -1,103 +1,102 @@
 package org.example.HttpRequest;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
+import org.example.HttpRequest.mocks.MockHttpURLConnection;
 import org.example.Services.HttpRequestService;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.core.classloader.annotations.PrepareForTest;
 
+import java.net.URL;
+
+import static org.mockito.Mockito.mock;
+import static org.powermock.api.mockito.PowerMockito.when;
+
+@RunWith(JUnitParamsRunner.class)
+@PrepareForTest({ URL.class })
 public class HttpRequestServiceTest {
+    @Test
+    public void whenCreatingClassWithNoArguments_newInstanceIsCreated() {
+        // given
 
-    //Class initialisation tests
+        // when
+        var newInstance = new HttpRequestService();
+
+        // then
+        Assert.assertNotNull(newInstance);
+        Assert.assertEquals("UTF-8", newInstance.getDefaultCharset());
+    }
 
     @Test
-    public void ClassShouldInitialised() {
-        //Give
-        String url = "http://normal.url:8000/service";
-        //When
-        new HttpRequestService(url);
-        //Then
-        Assert.assertTrue(true);
-    }
+    public void whenCreatingClassWithDefaultCharset_newInstanceIsCreated() {
+        // given
+        String defaultCharset = "UTF-16";
 
-    @Test(expected = NullPointerException.class)
-    public void ClassGetNullString() {
-        //Give
-        String url = null;
-        //When
-        new HttpRequestService(url);
-        //Then
-    }
+        // when
+        var newInstance = new HttpRequestService(defaultCharset);
 
-    @Test(expected = IllegalArgumentException.class)
-    public void ClassGetEmptyString() {
-        //Give
-        String url = "";
-        //When
-        new HttpRequestService(url);
-        //Then
+        // then
+        Assert.assertNotNull(newInstance);
+        Assert.assertEquals(defaultCharset, newInstance.getDefaultCharset());
     }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void UrlIsNotValid() {
-        //Give
-        String url = "http://normal.url:8000/    se    r  vic    $$$#e";
-        //When
-        new HttpRequestService(url);
-        //Then
-    }
-
-    //CRUD method tests
-    //Adding method tests
 
     @Test
-    public void AddCorrectData() throws Exception {
-        //Give
-        String url = "http://localhost:8080/notes";
-        String endpoint = "";
+    @Parameters({
+        "201, true",
+        "200, false",
+        "101, false",
+        "404, false",
+        "500, false",
+    })
+    public void whenPerformingPostRequest_thenCorrectOutputIsReturned(int responseCode, boolean expectedOutput) throws Exception {
+        // given
+        var connectionMock = new MockHttpURLConnection(responseCode);
+
+        URL urlMock = mock(URL.class);
+        when(urlMock.openConnection()).thenReturn(connectionMock);
+        when(urlMock.toString()).thenReturn("http://localhost");
+        when(urlMock.getProtocol()).thenReturn("https");
+
+        HttpRequestService httpRequestService = new HttpRequestService();
+
         String data = "{\"title\":\"Title\",\"userId\":\"0\",\"content\":\"Simple note text\"}";
-        HttpRequestService httpRequestService = new HttpRequestService(url);
-        //When
-        boolean response = httpRequestService.postRequest(endpoint, data);
-        //Then
-        Assert.assertTrue(response);
+
+        // when
+        boolean response = httpRequestService.postRequest(urlMock, data);
+
+        // then
+        Assert.assertEquals(expectedOutput, response);
+        Assert.assertTrue(connectionMock.getDoInput());
+        Assert.assertTrue(connectionMock.getDoOutput());
+        Assert.assertEquals(HttpRequestService.POST_Method, connectionMock.getRequestMethod());
+        Assert.assertEquals(data, connectionMock.getMockOutputStream().getContent());
     }
 
     @Test
-    public void AddIncorrectEndpoint() throws Exception {
-        //Give
-        String url = "http://localhost:8080/notes";
-        String endpoint = "wrong/endpoint/here";
-        String data = "{\"title\":\"Title\",\"userId\":\"0\",\"content\":\"Simple note text\"}";
-        HttpRequestService httpRequestService = new HttpRequestService(url);
-        //When
-        boolean response = httpRequestService.postRequest(endpoint, data);
-        //Then
-        Assert.assertFalse(response);
-    }
+    @Parameters({
+        "204, true",
+        "200, false",
+        "101, false",
+        "404, false",
+        "500, false",
+    })
+    public void whenPerformingValidDeleteRequest_thenCorrectResponseIsReturned(final int responseCode, boolean expectedOutput) throws Exception {
+        // given
+        var connectionMock = new MockHttpURLConnection(responseCode);
 
-    @Test
-    public void AddCorrectDataButPermutation1() throws Exception {
-        //Give
-        String url = "http://localhost:8080/notes";
-        String endpoint = "";
-        String data = "{\"userId\":\"0\",\"content\":\"Simple note text\",\"title\":\"Title\"}";
-        HttpRequestService httpRequestService = new HttpRequestService(url);
-        //When
-        boolean response = httpRequestService.postRequest(endpoint, data);
-        //Then
-        Assert.assertTrue(response);
-    }
+        URL urlMock = mock(URL.class);
+        when(urlMock.openConnection()).thenReturn(connectionMock);
 
-    @Test
-    public void AddCorrectDataButPermutation2() throws Exception {
-        //Give
-        String url = "http://localhost:8080/notes";
-        String endpoint = "";
-        String data = "{\"content\":\"Simple note text\",\"title\":\"Title\",\"userId\":\"0\"}";
-        HttpRequestService httpRequestService = new HttpRequestService(url);
-        //When
-        boolean response = httpRequestService.postRequest(endpoint, data);
-        //Then
-        Assert.assertTrue(response);
+        HttpRequestService httpRequestService = new HttpRequestService();
+
+        // when
+        boolean response = httpRequestService.deleteRequest(urlMock);
+
+        // then
+        Assert.assertEquals(expectedOutput, response);
+        Assert.assertEquals(HttpRequestService.DELETE_Method, connectionMock.getRequestMethod());
     }
 
 }

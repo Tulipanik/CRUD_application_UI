@@ -5,8 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ab5b2a7-885e-4787-9f6c-a023583c8289" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/mocks/MockHttpURLConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/mocks/MockOutputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_15_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_15_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_15_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestServiceInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestServiceInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/HttpRequestServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/HttpRequestServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Services/HttpRequestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Services/HttpRequestService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Services/HttpRequestServiceInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Services/HttpRequestServiceInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Services/NotesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Services/NotesService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/HttpRequestServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/HttpRequestServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +33,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -28,30 +59,39 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
   <component name="ProjectId" id="2XRlmpXDnD6gRDRZxXIVlz3spEs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CRUD_application" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Simon__tests",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunManager" selected="JUnit.HttpRequestServiceTest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="MAIN_CLASS_NAME" value="org.example.App" />
-      <module name="CRUD_application_UI" />
+      <module name="CrudUI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -63,10 +103,10 @@
       </method>
     </configuration>
     <configuration name="HttpRequestServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
+      <module name="CrudUI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.HttpRequest.*" />
+          <option name="PATTERN" value="org.example.HttpRequest.mocks.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,8 +117,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpRequestServiceTest.AddInCorrectData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
+    <configuration name="HttpRequestServiceTest.whenPerformingPostRequest_thenCorrectOutputIsReturned" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrudUI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.HttpRequest.*" />
@@ -87,14 +127,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
       <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.HttpRequestServiceTest" />
-      <option name="METHOD_NAME" value="AddInCorrectData" />
+      <option name="METHOD_NAME" value="whenPerformingPostRequest_thenCorrectOutputIsReturned" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpRequestServiceTest.AddIncorrectUrl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
+    <configuration name="HttpRequestServiceTest.whenPerformingValidDeleteRequest_thenCorrectResponseIsReturned" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrudUI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.HttpRequest.*" />
@@ -103,34 +143,24 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
       <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.HttpRequestServiceTest" />
-      <option name="METHOD_NAME" value="AddIncorrectUrl" />
+      <option name="METHOD_NAME" value="whenPerformingValidDeleteRequest_thenCorrectResponseIsReturned" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotesServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.HttpRequest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="JUnit.HttpRequestServiceTest" />
+      <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingPostRequest_thenCorrectOutputIsReturned" />
+      <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingValidDeleteRequest_thenCorrectResponseIsReturned" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.HttpRequestServiceTest" />
-        <item itemvalue="JUnit.HttpRequestServiceTest.AddInCorrectData" />
-        <item itemvalue="JUnit.HttpRequestServiceTest.AddIncorrectUrl" />
+        <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingPostRequest_thenCorrectOutputIsReturned" />
+        <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingValidDeleteRequest_thenCorrectResponseIsReturned" />
         <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.NotesServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -142,8 +172,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1698599936265</updated>
+      <workItem from="1698761221771" duration="6661000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -161,12 +195,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java</url>
-          <line>51</line>
+          <line>55</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestService.java</url>
-          <line>65</line>
+          <url>jar://$USER_HOME$/Library/Java/JavaVirtualMachines/corretto-17.0.3/Contents/Home/lib/src.zip!/java.base/java/net/HttpURLConnection.java</url>
+          <line>517</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
