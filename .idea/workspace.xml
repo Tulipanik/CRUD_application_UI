@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ab5b2a7-885e-4787-9f6c-a023583c8289" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/mocks/MockInputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/HttpRequestServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/HttpRequestServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/mocks/MockHttpURLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/mocks/MockHttpURLConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/HttpRequestServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/HttpRequestServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/mocks/MockHttpURLConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/mocks/MockHttpURLConnection.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +57,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
+    "extract.method.default.visibility": "private",
     "git-widget-placeholder": "Simon__tests",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -66,7 +66,7 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "preferences.editor",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   }
@@ -108,7 +108,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpRequestServiceTest.whenPerformingInvalidDeleteRequest_thenExceptionIsThrown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HttpRequestServiceTest.whenPerformingGetRequestWithIncorrectURLInput_thenExceptionIsThrown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrudUI" />
       <extension name="coverage">
         <pattern>
@@ -118,13 +118,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
       <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.HttpRequestServiceTest" />
-      <option name="METHOD_NAME" value="whenPerformingInvalidDeleteRequest_thenExceptionIsThrown" />
+      <option name="METHOD_NAME" value="whenPerformingGetRequestWithIncorrectURLInput_thenExceptionIsThrown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpRequestServiceTest.whenPerformingPostRequest_thenCorrectOutputIsReturned" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HttpRequestServiceTest.whenPerformingPutRequestWithInvalidInputJSON_thenExceptionIsThrown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrudUI" />
       <extension name="coverage">
         <pattern>
@@ -134,13 +134,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
       <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.HttpRequestServiceTest" />
-      <option name="METHOD_NAME" value="whenPerformingPostRequest_thenCorrectOutputIsReturned" />
+      <option name="METHOD_NAME" value="whenPerformingPutRequestWithInvalidInputJSON_thenExceptionIsThrown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HttpRequestServiceTest.whenPerformingValidGetRequest_thenCorrectOutputIsReturned" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HttpRequestServiceTest.whenPerformingPutRequestWithMalformedURL_thenExceptionIsThrown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrudUI" />
       <extension name="coverage">
         <pattern>
@@ -150,26 +150,26 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
       <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.HttpRequestServiceTest" />
-      <option name="METHOD_NAME" value="whenPerformingValidGetRequest_thenCorrectOutputIsReturned" />
+      <option name="METHOD_NAME" value="whenPerformingPutRequestWithMalformedURL_thenExceptionIsThrown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingGetRequestWithIncorrectURLInput_thenExceptionIsThrown" />
+      <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingPutRequestWithInvalidInputJSON_thenExceptionIsThrown" />
+      <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingPutRequestWithMalformedURL_thenExceptionIsThrown" />
       <item itemvalue="JUnit.HttpRequestServiceTest" />
       <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingDeleteRequestWithMalformedURL_thenExceptionIsThrown" />
-      <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingInvalidDeleteRequest_thenExceptionIsThrown" />
-      <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingPostRequest_thenCorrectOutputIsReturned" />
-      <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingValidGetRequest_thenCorrectOutputIsReturned" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.HttpRequestServiceTest" />
+        <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingPutRequestWithInvalidInputJSON_thenExceptionIsThrown" />
+        <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingPutRequestWithMalformedURL_thenExceptionIsThrown" />
+        <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingGetRequestWithIncorrectURLInput_thenExceptionIsThrown" />
         <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingDeleteRequestWithMalformedURL_thenExceptionIsThrown" />
-        <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingInvalidDeleteRequest_thenExceptionIsThrown" />
-        <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingValidGetRequest_thenCorrectOutputIsReturned" />
-        <item itemvalue="JUnit.HttpRequestServiceTest.whenPerformingPostRequest_thenCorrectOutputIsReturned" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +182,26 @@
       <option name="presentableId" value="Default" />
       <updated>1698599936265</updated>
       <workItem from="1698761221771" duration="6661000" />
+      <workItem from="1699025500172" duration="539000" />
+      <workItem from="1699027400552" duration="2655000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed tests regarding mocking get method response">
+      <option name="closed" value="true" />
+      <created>1699025924452</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699025924452</updated>
+    </task>
+    <task id="LOCAL-00002" summary="removed todo">
+      <option name="closed" value="true" />
+      <created>1699026005605</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699026005605</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +218,11 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed tests regarding mocking get method response" />
+    <MESSAGE value="removed todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed todo" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -208,29 +232,9 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestService.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/org/example/HttpRequest/HttpRequestServiceTest.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestService.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestService.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestService.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="25" />
+          <line>283</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

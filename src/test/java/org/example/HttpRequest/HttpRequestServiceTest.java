@@ -2,6 +2,7 @@ package org.example.HttpRequest;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
+import junitparams.converters.Nullable;
 import org.example.HttpRequest.mocks.MockHttpURLConnection;
 import org.example.Services.HttpRequestService;
 import org.junit.Assert;
@@ -13,7 +14,10 @@ import java.lang.Exception;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.InputMismatchException;
+import java.util.zip.DataFormatException;
 
+import static java.net.HttpURLConnection.HTTP_CREATED;
 import static org.mockito.Mockito.mock;
 import static org.powermock.api.mockito.PowerMockito.when;
 
@@ -103,6 +107,28 @@ public class HttpRequestServiceTest {
         // then
     }
 
+    @Test(expected = InputMismatchException.class)
+    public void whenPerformingGetRequestWithInvalidInputURL_thenExceptionIsThrown() throws Exception {
+        // given
+        HttpRequestService httpRequestService = new HttpRequestService();
+
+        // when
+        var response = httpRequestService.getRequest(null);
+
+        // then
+    }
+
+    @Test(expected = InputMismatchException.class)
+    public void whenPerformingGetRequestWithIncorrectURLInput_thenExceptionIsThrown() throws Exception {
+        // given
+        HttpRequestService httpRequestService = new HttpRequestService();
+
+        // when
+        var response = httpRequestService.getRequest(null);
+
+        // then
+    }
+
     @Test
     @Parameters({
             "201, true",
@@ -145,6 +171,34 @@ public class HttpRequestServiceTest {
         // then
     }
 
+    @Test(expected = InputMismatchException.class)
+    public void whenPerformingPostRequestWithInvalidInputURL_thenExceptionIsThrown() throws Exception {
+        // given
+        HttpRequestService httpRequestService = new HttpRequestService();
+
+        // when
+        var response = httpRequestService.postRequest(null, jsonMockData);
+
+        // then
+    }
+
+    @Test(expected = DataFormatException.class)
+    @Parameters({
+            "null",
+            " ",
+            "",
+    })
+    public void whenPerformingPostRequestWithInvalidInputJSON_thenExceptionIsThrown(String json) throws Exception {
+        // given
+        URL url = new URL(correctURL);
+        HttpRequestService httpRequestService = new HttpRequestService();
+
+        // when
+        var response = httpRequestService.postRequest(url, json);
+
+        // then
+    }
+
     @Test(expected = MalformedURLException.class)
     public void whenPerformingPostRequestWithMalformedURL_thenExceptionIsThrown() throws Exception {
         // given
@@ -153,6 +207,93 @@ public class HttpRequestServiceTest {
 
         // when
         var response = httpRequestService.postRequest(url, jsonMockData);
+
+        // then
+    }
+
+
+    @Test
+    @Parameters({
+            "201, true",
+            "200, false",
+            "101, false",
+            "404, false",
+            "500, false",
+    })
+    public void whenPerformingValidPutRequest_thenCorrectOutputIsReturned(int responseCode, boolean expectedOutput) throws Exception {
+        // given
+        var connectionMock = new MockHttpURLConnection(responseCode);
+
+        URL urlMock = mock(URL.class);
+        when(urlMock.openConnection()).thenReturn(connectionMock);
+        when(urlMock.toString()).thenReturn(correctURL);
+        when(urlMock.getProtocol()).thenReturn(httpsProtocol);
+
+        HttpRequestService httpRequestService = new HttpRequestService();
+
+        // when
+        var response = httpRequestService.putRequest(urlMock, jsonMockData);
+
+        // then
+        Assert.assertEquals(expectedOutput, response);
+        Assert.assertTrue(connectionMock.getDoInput());
+        Assert.assertTrue(connectionMock.getDoOutput());
+        Assert.assertEquals(HttpRequestService.PUT_Method, connectionMock.getRequestMethod());
+        Assert.assertEquals(jsonMockData, connectionMock.getMockOutputStream().getContent());
+    }
+
+    @Test(expected = Exception.class)
+    public void whenPerformingPutRequestWithInvalidURL_thenExceptionIsThrown() throws Exception {
+        // given
+        URL url = new URL(wrongURL);
+        HttpRequestService httpRequestService = new HttpRequestService();
+
+        // when
+        var response = httpRequestService.putRequest(url, jsonMockData);
+
+        // then
+    }
+
+    @Test(expected = InputMismatchException.class)
+    public void whenPerformingPutRequestWithInvalidInputURL_thenExceptionIsThrown() throws Exception {
+        // given
+        HttpRequestService httpRequestService = new HttpRequestService();
+
+        // when
+        var response = httpRequestService.putRequest(null, jsonMockData);
+
+        // then
+    }
+
+    @Test(expected = DataFormatException.class)
+    @Parameters({
+            "null",
+            " ",
+            "",
+    })
+    public void whenPerformingPutRequestWithInvalidInputJSON_thenExceptionIsThrown(@Nullable String json) throws DataFormatException, Exception {
+        // given
+        var connectionMock = new MockHttpURLConnection(HTTP_CREATED);
+
+        URL urlMock = mock(URL.class);
+        when(urlMock.openConnection()).thenReturn(connectionMock);
+
+        HttpRequestService httpRequestService = new HttpRequestService();
+
+        // when
+        var response = httpRequestService.putRequest(urlMock, json);
+
+        // then
+    }
+
+    @Test(expected = MalformedURLException.class)
+    public void whenPerformingPutRequestWithMalformedURL_thenExceptionIsThrown() throws Exception {
+        // given
+        URL urlMock = new URL(malformedURL);
+        HttpRequestService httpRequestService = new HttpRequestService();
+
+        // when
+        var response = httpRequestService.putRequest(urlMock, jsonMockData);
 
         // then
     }
@@ -202,6 +343,17 @@ public class HttpRequestServiceTest {
 
         // when
         var response = httpRequestService.deleteRequest(url);
+
+        // then
+    }
+
+    @Test(expected = InputMismatchException.class)
+    public void whenPerformingDeleteRequestWithInvalidInputURL_thenExceptionIsThrown() throws Exception {
+        // given
+        HttpRequestService httpRequestService = new HttpRequestService();
+
+        // when
+        var response = httpRequestService.deleteRequest(null);
 
         // then
     }

@@ -42,6 +42,11 @@ public class MockHttpURLConnection extends HttpURLConnection {
     }
 
     @Override
+    public void setRequestProperty(String key, String value) {
+        ;;
+    }
+
+    @Override
     public OutputStream getOutputStream() throws IOException {
         return outputStream;
     }

@@ -6,6 +6,8 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import static java.net.HttpURLConnection.*;
 import java.net.URL;
+import java.util.InputMismatchException;
+import java.util.zip.DataFormatException;
 
 public class HttpRequestService implements HttpRequestServiceInterface {
     public static final String GET_Method = "GET";
@@ -21,6 +23,8 @@ public class HttpRequestService implements HttpRequestServiceInterface {
     }
 
     public String getRequest (URL url) throws Exception {
+        validateURL(url);
+
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod(GET_Method);
 
@@ -40,24 +44,28 @@ public class HttpRequestService implements HttpRequestServiceInterface {
     }
 
     public boolean postRequest (URL url, String json) throws Exception {
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestProperty("Content-Type", "application/json");
-            connection.setDoInput(true);
-            connection.setDoOutput(true);
+        validateURL(url);
+        validateJSON(json);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestProperty("Content-Type", "application/json");
+        connection.setDoInput(true);
+        connection.setDoOutput(true);
 
-            connection.setRequestMethod(POST_Method);
+        connection.setRequestMethod(POST_Method);
 
-            OutputStream os = connection.getOutputStream();
-            byte[] input = json.getBytes(defaultCharset);
-            os.write(input, 0, input.length);
+        OutputStream os = connection.getOutputStream();
+        byte[] input = json.getBytes(defaultCharset);
+        os.write(input, 0, input.length);
 
-            int responseCode = connection.getResponseCode();
-            StringBuilder response = new StringBuilder();
+        int responseCode = connection.getResponseCode();
+        StringBuilder response = new StringBuilder();
 
-            return responseCode == HTTP_CREATED;
+        return responseCode == HTTP_CREATED;
     }
 
     public boolean putRequest (URL url, String json) throws Exception{
+        validateURL(url);
+        validateJSON(json);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setDoInput(true);
@@ -74,6 +82,7 @@ public class HttpRequestService implements HttpRequestServiceInterface {
     }
 
     public boolean deleteRequest (URL url) throws Exception{
+        validateURL(url);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod(DELETE_Method);
 
@@ -89,5 +98,17 @@ public class HttpRequestService implements HttpRequestServiceInterface {
     public void setDefaultCharset(String defaultCharset)
     {
         this.defaultCharset = defaultCharset;
+    }
+
+    private void validateURL(URL url) throws InputMismatchException
+    {
+        if(url == null)
+            throw new InputMismatchException("URL is null");
+    }
+
+    private void validateJSON(String json) throws DataFormatException
+    {
+        if(json == null || json.isEmpty())
+            throw new DataFormatException("Provided data is not correct");
     }
 }
