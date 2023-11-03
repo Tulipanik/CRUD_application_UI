@@ -114,7 +114,7 @@ public class UI {
             case "2" -> {
                 System.out.println("Wprowadź id notatki");
                 String id = readFromUser();
-                printJsonAsTable("[" +requests.getIdNote("/" + id) + "]");
+                printJsonAsTable("[" +requests.getIdNote(id) + "]");
                 startMenu();
             }
             case "3" -> {
