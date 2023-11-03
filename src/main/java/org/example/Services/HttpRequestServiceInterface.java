@@ -9,11 +9,11 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 public interface HttpRequestServiceInterface {
-    String getRequest(String endpoint) throws ProtocolException, Exception;
+    String getRequest(URL url) throws ProtocolException, Exception;
 
-    boolean postRequest(String endpoint, String json) throws MalformedURLException, Exception;
+    boolean postRequest(URL url, String json) throws MalformedURLException, Exception;
 
-    boolean putRequest(String endpoint, String json) throws Exception;
+    boolean putRequest(URL url, String json) throws Exception;
 
-    boolean deleteRequest(String endpoint) throws Exception;
+    boolean deleteRequest(URL url) throws Exception;
 }
