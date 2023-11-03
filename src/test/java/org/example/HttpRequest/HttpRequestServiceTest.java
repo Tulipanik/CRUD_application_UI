@@ -76,7 +76,7 @@ public class HttpRequestServiceTest {
 
         // then
         Assert.assertEquals(jsonMockData, response);
-        Assert.assertEquals(HttpRequestService.GET_Method, connectionMock.getRequestMethod()); // TODO: Not working
+        Assert.assertEquals(HttpRequestService.GET_Method, connectionMock.getRequestMethod());
     }
 
     @Test(expected = Exception.class)
