@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ab5b2a7-885e-4787-9f6c-a023583c8289" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Services/HttpRequestService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/HttpRequestServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/HttpRequestServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/mocks/MockHttpURLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/mocks/MockHttpURLConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Services/HttpRequestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Services/HttpRequestService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/HttpRequestServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/HttpRequestServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/mocks/MockHttpURLConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/mocks/MockHttpURLConnection.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +183,7 @@
       <updated>1698599936265</updated>
       <workItem from="1698761221771" duration="6661000" />
       <workItem from="1699025500172" duration="539000" />
-      <workItem from="1699027400552" duration="2655000" />
+      <workItem from="1699027400552" duration="3570000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed tests regarding mocking get method response">
       <option name="closed" value="true" />
@@ -201,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699026005605</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added boundary cases">
+      <option name="closed" value="true" />
+      <created>1699030461915</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699030461915</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,7 +229,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed tests regarding mocking get method response" />
     <MESSAGE value="removed todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed todo" />
+    <MESSAGE value="Added boundary cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added boundary cases" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -233,7 +242,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/org/example/HttpRequest/HttpRequestServiceTest.java</url>
-          <line>283</line>
+          <line>282</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>

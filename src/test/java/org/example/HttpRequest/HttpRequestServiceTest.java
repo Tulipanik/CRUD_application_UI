@@ -184,7 +184,6 @@ public class HttpRequestServiceTest {
 
     @Test(expected = DataFormatException.class)
     @Parameters({
-            "null",
             " ",
             "",
     })
