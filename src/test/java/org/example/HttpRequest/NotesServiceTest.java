@@ -161,7 +161,7 @@ public class NotesServiceTest {
         Assert.assertTrue(patternFound);
         Assert.assertNotEquals("", deletedResponse);
     }
-    //Getting method tests
+    //Reading method tests
     @Test
     public void GetAllNotes() throws Exception {
         //Given
@@ -193,7 +193,6 @@ public class NotesServiceTest {
         notesService.add(title, content, groupId);
         String response = notesService.getGroupNotes(groupId);
         //Then
-        Assert.assertNotNull(response);
         String pattern = "\\{\"id\":\"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\",\"title\":\"CorrectIdNote\",\"content\":\"Simple note text\",\"userId\":\"5\"\\}";
         Pattern regexPattern = Pattern.compile(pattern);
         Matcher matcher = regexPattern.matcher(response);
@@ -216,7 +215,42 @@ public class NotesServiceTest {
         Assert.assertEquals("[]", response);
     }
 
+    @Test
+    public void GetNoteByCorrectId() throws Exception {
+        //Given
+        NotesService notesService = new NotesService();
+        String title = "IncorrectIdNote";
+        String groupId = "5";
+        String content = "Simple note text";
+        //When
+        notesService.deleteAllNotes();
+        notesService.add(title, content, groupId);
+        String pattern = "([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})";
+        String response = notesService.getAllNotes();
+        Pattern regexPattern = Pattern.compile(pattern);
+        Matcher matcher = regexPattern.matcher(response);
+        matcher.find();
+        String idValue = matcher.group(0);
+        String foundNote = notesService.getIdNote(idValue);
+        String expectedNote = "{\"id\":\"" + idValue + "\",\"title\":\"IncorrectIdNote\",\"content\":\"Simple note text\",\"userId\":\"5\"}";
+        //Then
+        Assert.assertEquals(expectedNote, foundNote);
+    }
 
+    @Test
+    public void GetNoteByIncorrectId() throws Exception {
+        //Given
+        NotesService notesService = new NotesService();
+        String title = "IncorrectIdNote";
+        String groupId = "5";
+        String content = "Simple note text";
+        //When
+        notesService.deleteAllNotes();
+        notesService.add(title, content, groupId);
+        String foundNote = notesService.getIdNote("incorrect id");
+        //Then
+        Assert.assertEquals("", foundNote);
+    }
     //Adding method tests
 
     @Test
