@@ -68,8 +68,8 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.NotesServiceTest.GetNoteByIncorrectId">
-    <configuration name="NotesServiceTest.DeleteNoteByIncorrectId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId">
+    <configuration name="NotesServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CRUD_application_UI" />
       <extension name="coverage">
         <pattern>
@@ -79,24 +79,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
       <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
-      <option name="METHOD_NAME" value="DeleteNoteByIncorrectId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NotesServiceTest.DeleteNotesGroupByIncorrectIdPerm1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.HttpRequest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
-      <option name="METHOD_NAME" value="DeleteNotesGroupByIncorrectIdPerm1" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,20 +132,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CRUD_application_UI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.HttpRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
+      <option name="METHOD_NAME" value="UpdateNoteByCorrectIdAndCorrectGroupId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="JUnit.NotesServiceTest.DeleteNoteByIncorrectId" />
-      <item itemvalue="JUnit.NotesServiceTest.DeleteNotesGroupByIncorrectIdPerm1" />
+      <item itemvalue="JUnit.NotesServiceTest" />
       <item itemvalue="JUnit.NotesServiceTest.GetNoteByCorrectGroupId" />
       <item itemvalue="JUnit.NotesServiceTest.GetNoteByCorrectId" />
       <item itemvalue="JUnit.NotesServiceTest.GetNoteByIncorrectId" />
+      <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" />
+        <item itemvalue="JUnit.NotesServiceTest" />
         <item itemvalue="JUnit.NotesServiceTest.GetNoteByIncorrectId" />
         <item itemvalue="JUnit.NotesServiceTest.GetNoteByCorrectGroupId" />
         <item itemvalue="JUnit.NotesServiceTest.GetNoteByCorrectId" />
-        <item itemvalue="JUnit.NotesServiceTest.DeleteNoteByIncorrectId" />
-        <item itemvalue="JUnit.NotesServiceTest.DeleteNotesGroupByIncorrectIdPerm1" />
       </list>
     </recent_temporary>
   </component>

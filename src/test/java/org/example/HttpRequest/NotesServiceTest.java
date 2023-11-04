@@ -219,7 +219,7 @@ public class NotesServiceTest {
     public void GetNoteByCorrectId() throws Exception {
         //Given
         NotesService notesService = new NotesService();
-        String title = "IncorrectIdNote";
+        String title = "CorrectIdNote";
         String groupId = "5";
         String content = "Simple note text";
         //When
@@ -251,7 +251,34 @@ public class NotesServiceTest {
         //Then
         Assert.assertEquals("", foundNote);
     }
-    //Adding method tests
+    //Update method tests
+    @Test
+    public void UpdateNoteByCorrectIdAndCorrectGroupId() throws Exception {
+        //Given
+        NotesService notesService = new NotesService();
+        String title = "CorrectIdNote";
+        String groupId = "5";
+        String content = "Simple note text";
+        String updatedTitle = "UpdatedNote";
+        String updatedGroupId = "0";
+        String updatedContent = "Updated note text";
+        //When
+        notesService.deleteAllNotes();
+        notesService.add(title, content, groupId);
+        String response = notesService.getGroupNotes(groupId);
+
+        String pattern = "([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})";
+        Pattern regexPattern = Pattern.compile(pattern);
+        Matcher matcher = regexPattern.matcher(response);
+        matcher.find();
+        String idValue = matcher.group(0);
+        notesService.updateNote(idValue, updatedTitle, updatedContent, updatedGroupId);
+        String updatedResponse = notesService.getIdNote(idValue);
+        String expectedResponse = "{\"id\":\"" + idValue +"\",\"title\":\"UpdatedNote\",\"content\":\"Updated note text\",\"userId\":\"0\"}";
+        //Then
+        Assert.assertEquals(expectedResponse, updatedResponse);
+    }
+    //Create method tests
 
     @Test
     public void AddCorrectData() throws Exception {
