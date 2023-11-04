@@ -4,24 +4,29 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.URL;
-
 import static java.net.HttpURLConnection.*;
+import java.net.URL;
+import java.util.InputMismatchException;
+import java.util.zip.DataFormatException;
 
 public class HttpRequestService implements HttpRequestServiceInterface {
+    public static final String GET_Method = "GET";
+    public static final String POST_Method = "POST";
+    public static final String PUT_Method = "PUT";
+    public static final String DELETE_Method = "DELETE";
 
-    private String URLAddress;
-    URL url = null;
-    HttpURLConnection connection = null;
+    private String defaultCharset = "UTF-8";
 
-    public HttpRequestService(String URLAddress) {
-        this.URLAddress = URLAddress;
+    public HttpRequestService() {}
+    public HttpRequestService(String defaultCharset) {
+        this.defaultCharset = defaultCharset;
     }
 
-    public String getRequest (String endpoint) throws Exception {
-        url = new URL(URLAddress + endpoint);
+    public String getRequest (URL url) throws Exception {
+        validateURL(url);
+
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("GET");
+        connection.setRequestMethod(GET_Method);
 
         int responseCode = connection.getResponseCode();
 
@@ -38,50 +43,72 @@ public class HttpRequestService implements HttpRequestServiceInterface {
         return response.toString();
     }
 
-    public boolean postRequest (String endpoint, String json) throws Exception {
-            url = new URL(URLAddress + endpoint);
-
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestProperty("Content-Type", "application/json");
-            connection.setDoInput(true);
-            connection.setDoOutput(true);
-
-            connection.setRequestMethod("POST");
-
-            OutputStream os = connection.getOutputStream();
-            byte[] input = json.getBytes("UTF-8");
-            os.write(input, 0, input.length);
-
-            int responseCode = connection.getResponseCode();
-            StringBuilder response = new StringBuilder();
-
-            return responseCode == HTTP_CREATED;
-    }
-
-    public boolean putRequest (String endpoint, String json) throws Exception{
-        url = new URL(URLAddress + endpoint);
-
+    public boolean postRequest (URL url, String json) throws Exception {
+        validateURL(url);
+        validateJSON(json);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setDoInput(true);
         connection.setDoOutput(true);
 
-        connection.setRequestMethod("PUT");
+        connection.setRequestMethod(POST_Method);
 
         OutputStream os = connection.getOutputStream();
-        byte[] input = json.getBytes("UTF-8");
+        byte[] input = json.getBytes(defaultCharset);
+        os.write(input, 0, input.length);
+
+        int responseCode = connection.getResponseCode();
+        StringBuilder response = new StringBuilder();
+
+        return responseCode == HTTP_CREATED;
+    }
+
+    public boolean putRequest (URL url, String json) throws Exception{
+        validateURL(url);
+        validateJSON(json);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestProperty("Content-Type", "application/json");
+        connection.setDoInput(true);
+        connection.setDoOutput(true);
+
+        connection.setRequestMethod(PUT_Method);
+
+        OutputStream os = connection.getOutputStream();
+        byte[] input = json.getBytes(defaultCharset);
         os.write(input, 0, input.length);
 
         int responseCode = connection.getResponseCode();
         return responseCode == HTTP_CREATED;
     }
 
-    public boolean deleteRequest (String endpoint) throws Exception{
-        url = new URL(URLAddress + endpoint);
+    public boolean deleteRequest (URL url) throws Exception{
+        validateURL(url);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("DELETE");
+        connection.setRequestMethod(DELETE_Method);
 
         int responseCode = connection.getResponseCode();
-        return responseCode == HTTP_NO_CONTENT;
+        return responseCode == 204;
+    }
+
+    public String getDefaultCharset()
+    {
+        return defaultCharset;
+    }
+
+    public void setDefaultCharset(String defaultCharset)
+    {
+        this.defaultCharset = defaultCharset;
+    }
+
+    private void validateURL(URL url) throws InputMismatchException
+    {
+        if(url == null)
+            throw new InputMismatchException("URL is null");
+    }
+
+    private void validateJSON(String json) throws DataFormatException
+    {
+        if(json == null || json.isEmpty())
+            throw new DataFormatException("Provided data is not correct");
     }
 }
