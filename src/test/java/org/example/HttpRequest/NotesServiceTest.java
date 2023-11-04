@@ -94,16 +94,11 @@ public class NotesServiceTest {
         String title1 = "Title1";
         String groupId1 = "0";
         String content1 = "Simple note text 1";
-        String title2 = "Title2";
-        String groupId2 = "1";
-        String content2 = "Simple note text 2";
         // When
         notesService.deleteAllNotes();
         notesService.add(title1, content1, groupId1);
-        notesService.add(title2, content2, groupId2);
         notesService.deleteAllGroupNotes("X");
         String response1 = notesService.getGroupNotes(groupId1);
-        String response2 = notesService.getGroupNotes(groupId2);
         //Then
         Assert.assertNotEquals("[]", response1);
     }
@@ -306,8 +301,26 @@ public class NotesServiceTest {
         Assert.assertEquals(expectedResponse, updatedResponse);
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void UpdateNoteByIncorrectIdAndCorrectGroupId() throws Exception {
+        //Given
+        NotesService notesService = new NotesService();
+        String title = "CorrectIdNote";
+        String groupId = "5";
+        String content = "Simple note text";
+        String updatedTitle = "UpdatedNote";
+        String updatedGroupId = "2";
+        String updatedContent = "Updated note text";
+        //When
+        notesService.deleteAllNotes();
+        notesService.add(title, content, groupId);
+        boolean isSuccessfull = notesService.updateNote("incorrectId", updatedTitle, updatedContent, updatedGroupId);
+        //Then
+        Assert.assertFalse(isSuccessfull);
+    }
+
+    @Test
+    public void UpdateNoteByIncorrectIdAndInorrectGroupId() throws Exception {
         //Given
         NotesService notesService = new NotesService();
         String title = "CorrectIdNote";
@@ -319,8 +332,9 @@ public class NotesServiceTest {
         //When
         notesService.deleteAllNotes();
         notesService.add(title, content, groupId);
-        notesService.updateNote("incorrectId", updatedTitle, updatedContent, updatedGroupId);
+        boolean isSuccessfull = notesService.updateNote("incorrectId", updatedTitle, updatedContent, updatedGroupId);
         //Then
+        Assert.assertFalse(isSuccessfull);
     }
     //Create method tests
 
