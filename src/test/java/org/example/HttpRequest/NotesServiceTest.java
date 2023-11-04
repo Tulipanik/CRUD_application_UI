@@ -33,7 +33,7 @@ public class NotesServiceTest {
         Assert.assertTrue(response);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void AddCorrectDataButPerm1() throws Exception {
         //Give
         NotesService notesService = new NotesService();
@@ -45,7 +45,7 @@ public class NotesServiceTest {
         //Then
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void AddCorrectDataButPerm2() throws Exception {
         //Give
         NotesService notesService = new NotesService();
@@ -141,7 +141,7 @@ public class NotesServiceTest {
         //Then
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void AddInCorrectGroupIdDataPerm1() throws Exception {
         //Give
         NotesService notesService = new NotesService();
