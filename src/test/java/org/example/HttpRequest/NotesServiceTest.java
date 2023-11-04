@@ -278,6 +278,50 @@ public class NotesServiceTest {
         //Then
         Assert.assertEquals(expectedResponse, updatedResponse);
     }
+
+    @Test
+    public void UpdateNoteByCorrectIdAndIncorrectGroupId() throws Exception {
+        //Given
+        NotesService notesService = new NotesService();
+        String title = "CorrectIdNote";
+        String groupId = "5";
+        String content = "Simple note text";
+        String updatedTitle = "UpdatedNote";
+        String updatedGroupId = "X";
+        String updatedContent = "Updated note text";
+        //When
+        notesService.deleteAllNotes();
+        notesService.add(title, content, groupId);
+        String response = notesService.getGroupNotes(groupId);
+
+        String pattern = "([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})";
+        Pattern regexPattern = Pattern.compile(pattern);
+        Matcher matcher = regexPattern.matcher(response);
+        matcher.find();
+        String idValue = matcher.group(0);
+        notesService.updateNote(idValue, updatedTitle, updatedContent, updatedGroupId);
+        String updatedResponse = notesService.getIdNote(idValue);
+        String expectedResponse = "{\"id\":\"" + idValue +"\",\"title\":\"UpdatedNote\",\"content\":\"Updated note text\",\"userId\":\"X\"}";
+        //Then
+        Assert.assertEquals(expectedResponse, updatedResponse);
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void UpdateNoteByIncorrectIdAndCorrectGroupId() throws Exception {
+        //Given
+        NotesService notesService = new NotesService();
+        String title = "CorrectIdNote";
+        String groupId = "5";
+        String content = "Simple note text";
+        String updatedTitle = "UpdatedNote";
+        String updatedGroupId = "X";
+        String updatedContent = "Updated note text";
+        //When
+        notesService.deleteAllNotes();
+        notesService.add(title, content, groupId);
+        notesService.updateNote("incorrectId", updatedTitle, updatedContent, updatedGroupId);
+        //Then
+    }
     //Create method tests
 
     @Test

@@ -68,7 +68,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId">
+  <component name="RunManager" selected="JUnit.NotesServiceTest.UpdateNoteByIncorrectIdAndCorrectGroupId">
     <configuration name="NotesServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CRUD_application_UI" />
       <extension name="coverage">
@@ -84,7 +84,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotesServiceTest.GetNoteByCorrectGroupId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NotesServiceTest.AddInCorrectGroupIdDataPerm1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CRUD_application_UI" />
       <extension name="coverage">
         <pattern>
@@ -94,39 +94,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
       <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
-      <option name="METHOD_NAME" value="GetNoteByCorrectGroupId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NotesServiceTest.GetNoteByCorrectId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.HttpRequest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
-      <option name="METHOD_NAME" value="GetNoteByCorrectId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NotesServiceTest.GetNoteByIncorrectId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.HttpRequest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
-      <option name="METHOD_NAME" value="GetNoteByIncorrectId" />
+      <option name="METHOD_NAME" value="AddInCorrectGroupIdDataPerm1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -148,20 +116,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NotesServiceTest.UpdateNoteByCorrectIdAndIncorrectGroupId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CRUD_application_UI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.HttpRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
+      <option name="METHOD_NAME" value="UpdateNoteByCorrectIdAndIncorrectGroupId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotesServiceTest.UpdateNoteByIncorrectIdAndCorrectGroupId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CRUD_application_UI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.HttpRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
+      <option name="METHOD_NAME" value="UpdateNoteByIncorrectIdAndCorrectGroupId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.NotesServiceTest" />
-      <item itemvalue="JUnit.NotesServiceTest.GetNoteByCorrectGroupId" />
-      <item itemvalue="JUnit.NotesServiceTest.GetNoteByCorrectId" />
-      <item itemvalue="JUnit.NotesServiceTest.GetNoteByIncorrectId" />
+      <item itemvalue="JUnit.NotesServiceTest.AddInCorrectGroupIdDataPerm1" />
       <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" />
+      <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndIncorrectGroupId" />
+      <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByIncorrectIdAndCorrectGroupId" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByIncorrectIdAndCorrectGroupId" />
+        <item itemvalue="JUnit.NotesServiceTest.AddInCorrectGroupIdDataPerm1" />
+        <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndIncorrectGroupId" />
         <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" />
         <item itemvalue="JUnit.NotesServiceTest" />
-        <item itemvalue="JUnit.NotesServiceTest.GetNoteByIncorrectId" />
-        <item itemvalue="JUnit.NotesServiceTest.GetNoteByCorrectGroupId" />
-        <item itemvalue="JUnit.NotesServiceTest.GetNoteByCorrectId" />
       </list>
     </recent_temporary>
   </component>
