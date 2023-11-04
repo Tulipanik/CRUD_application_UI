@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ab5b2a7-885e-4787-9f6c-a023583c8289" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_15_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_15_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_15_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/NotesServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/NotesServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Services/NotesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Services/NotesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/NotesServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/NotesServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,38 +49,28 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
-}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2XRlmpXDnD6gRDRZxXIVlz3spEs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Simon__tests",
-    "last_opened_file_path": "C:/Studia/Testowanie/CRUD_application_UI",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
-  <component name="RunManager" selected="JUnit.NotesServiceTest.UpdateNoteByIncorrectIdAndInorrectGroupId">
-    <configuration name="NotesServiceTest.AddInCorrectGroupIdDataPerm1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="JUnit.NotesServiceTest.AddCorrectData">
+    <configuration name="NotesServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrudUI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.HttpRequest.*" />
@@ -78,14 +79,45 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
       <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
-      <option name="METHOD_NAME" value="AddInCorrectGroupIdDataPerm1" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotesServiceTest.AddCorrectData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrudUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.HttpRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
+      <option name="METHOD_NAME" value="AddCorrectData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotesServiceTest.GetNoteByIncorrectId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrudUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.HttpRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
+      <option name="METHOD_NAME" value="GetNoteByIncorrectId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
+      <module name="CrudUI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.HttpRequest.*" />
@@ -100,24 +132,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotesServiceTest.UpdateNoteByCorrectIdAndIncorrectGroupId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.HttpRequest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
-      <option name="METHOD_NAME" value="UpdateNoteByCorrectIdAndIncorrectGroupId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="NotesServiceTest.UpdateNoteByIncorrectIdAndCorrectGroupId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
+      <module name="CrudUI" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.HttpRequest.*" />
@@ -132,36 +148,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NotesServiceTest.UpdateNoteByIncorrectIdAndInorrectGroupId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CRUD_application_UI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.HttpRequest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
-      <option name="METHOD_NAME" value="UpdateNoteByIncorrectIdAndInorrectGroupId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.NotesServiceTest.AddInCorrectGroupIdDataPerm1" />
+      <item itemvalue="JUnit.NotesServiceTest.GetNoteByIncorrectId" />
       <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" />
-      <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndIncorrectGroupId" />
       <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByIncorrectIdAndCorrectGroupId" />
-      <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByIncorrectIdAndInorrectGroupId" />
+      <item itemvalue="JUnit.NotesServiceTest" />
+      <item itemvalue="JUnit.NotesServiceTest.AddCorrectData" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByIncorrectIdAndInorrectGroupId" />
+        <item itemvalue="JUnit.NotesServiceTest.AddCorrectData" />
+        <item itemvalue="JUnit.NotesServiceTest" />
         <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByIncorrectIdAndCorrectGroupId" />
-        <item itemvalue="JUnit.NotesServiceTest.AddInCorrectGroupIdDataPerm1" />
-        <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndIncorrectGroupId" />
         <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" />
+        <item itemvalue="JUnit.NotesServiceTest.GetNoteByIncorrectId" />
       </list>
     </recent_temporary>
   </component>

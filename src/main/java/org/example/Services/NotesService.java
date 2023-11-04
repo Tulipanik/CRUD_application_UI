@@ -8,7 +8,15 @@ import java.util.HashMap;
 
 public class NotesService implements NotesServiceInterface {
     private static final String baseUrl = "http://localhost:8080/notes";
-    private final HttpRequestServiceInterface requests = new HttpRequestService();
+    private final HttpRequestServiceInterface requests;
+
+    public NotesService() {
+        this.requests = new HttpRequestService();
+    }
+
+    public NotesService(HttpRequestServiceInterface requests) {
+        this.requests = requests;
+    }
 
     public String getAllNotes() {
         try {
@@ -102,15 +110,6 @@ public class NotesService implements NotesServiceInterface {
     }
 
     private boolean validation(String title, String content, String groupId) {
-        //NullPointer
-        if (title == null || content == null || groupId == null) {
-            return false;
-        }
-        try {
-            Integer.parseInt(groupId);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
+        return title != null && content != null && groupId != null;
     }
 }
