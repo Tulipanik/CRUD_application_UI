@@ -320,7 +320,7 @@ public class NotesServiceTest {
     }
 
     @Test
-    public void UpdateNoteByIncorrectIdAndInorrectGroupId() throws Exception {
+    public void UpdateNoteByIncorrectIdAndIncorrectGroupId() throws Exception {
         //Given
         NotesService notesService = new NotesService();
         String title = "CorrectIdNote";
