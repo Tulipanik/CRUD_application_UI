@@ -66,7 +66,7 @@ public class NotesService implements NotesServiceInterface {
     }
 
     public boolean updateNote(String id, String title, String content, String groupId) {
-        if (validation(title, content, groupId)) {
+        if (!validation(title, content, groupId)) {
             throw new IllegalArgumentException();
         }
 
