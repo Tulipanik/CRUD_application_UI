@@ -38,7 +38,8 @@ public class NotesService implements NotesServiceInterface {
 
     public String getGroupNotes(String userId) {
         try {
-            return requests.getRequest("/user/" + userId);
+            URL url = new URL(baseUrl + "/user/" + userId);
+            return requests.getRequest(url);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -96,7 +97,8 @@ public class NotesService implements NotesServiceInterface {
 
     public boolean deleteAllNotes() {
         try {
-            return requests.deleteRequest("");
+            URL url=new URL(baseUrl);
+            return requests.deleteRequest(url);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -104,7 +106,8 @@ public class NotesService implements NotesServiceInterface {
 
     public boolean deleteAllGroupNotes(String groupId) {
         try {
-            return requests.deleteRequest("/user/" + groupId);
+            URL url=new URL(baseUrl+"/user/" + groupId);
+            return requests.deleteRequest(url);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

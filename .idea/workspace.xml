@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ab5b2a7-885e-4787-9f6c-a023583c8289" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_15_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_15_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_15_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+    <list default="true" id="6ab5b2a7-885e-4787-9f6c-a023583c8289" name="Changes" comment="Added boundary cases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/NotesServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/NotesServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Services/HttpRequestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Services/HttpRequestService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/Services/NotesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Services/NotesService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/NotesServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/NotesServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/HttpRequestServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/NotesServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/mocks/MockHttpURLConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/mocks/MockOutputStream.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/UI/UITest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,11 +62,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-  </component>
-  <component name="RunManager" selected="JUnit.NotesServiceTest.AddCorrectData">
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2022.2.3/lib/commons-lang3-3.13.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.NotesServiceTest">
+    <configuration name="HttpRequestServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrudUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.HttpRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.HttpRequestServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NotesServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CrudUI" />
       <extension name="coverage">
@@ -95,22 +112,6 @@
       <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
       <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
       <option name="METHOD_NAME" value="AddCorrectData" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NotesServiceTest.GetNoteByIncorrectId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CrudUI" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.HttpRequest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
-      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
-      <option name="METHOD_NAME" value="GetNoteByIncorrectId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,7 +150,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.NotesServiceTest.GetNoteByIncorrectId" />
+      <item itemvalue="JUnit.HttpRequestServiceTest" />
       <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" />
       <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByIncorrectIdAndCorrectGroupId" />
       <item itemvalue="JUnit.NotesServiceTest" />
@@ -157,11 +158,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.NotesServiceTest.AddCorrectData" />
         <item itemvalue="JUnit.NotesServiceTest" />
+        <item itemvalue="JUnit.HttpRequestServiceTest" />
+        <item itemvalue="JUnit.NotesServiceTest.AddCorrectData" />
         <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByIncorrectIdAndCorrectGroupId" />
         <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" />
-        <item itemvalue="JUnit.NotesServiceTest.GetNoteByIncorrectId" />
       </list>
     </recent_temporary>
   </component>
