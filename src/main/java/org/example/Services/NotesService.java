@@ -8,7 +8,15 @@ import java.util.HashMap;
 
 public class NotesService implements NotesServiceInterface {
     private static final String baseUrl = "http://localhost:8080/notes";
-    private final HttpRequestServiceInterface requests = new HttpRequestService();
+    private final HttpRequestServiceInterface requests;
+
+    public NotesService() {
+        this.requests = new HttpRequestService();
+    }
+
+    public NotesService(HttpRequestServiceInterface requests) {
+        this.requests = requests;
+    }
 
     public String getAllNotes() {
         try {
@@ -30,14 +38,13 @@ public class NotesService implements NotesServiceInterface {
 
     public String getGroupNotes(String userId) {
         try {
-            URL url = new URL(baseUrl + "/user/" + userId);
-            return requests.getRequest(url);
+            return requests.getRequest("/user/" + userId);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    public boolean add(String title, String content, String groupId) {
+    public boolean add(String title, String content, String groupId) throws MalformedURLException {
         if (!validation(title, content, groupId)) {
             throw new IllegalArgumentException();
         }
@@ -89,8 +96,7 @@ public class NotesService implements NotesServiceInterface {
 
     public boolean deleteAllNotes() {
         try {
-            URL url = new URL(baseUrl);
-            return requests.deleteRequest(url);
+            return requests.deleteRequest("");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -98,8 +104,7 @@ public class NotesService implements NotesServiceInterface {
 
     public boolean deleteAllGroupNotes(String groupId) {
         try {
-            URL url = new URL(baseUrl + "/user/" + groupId);
-            return requests.deleteRequest(url);
+            return requests.deleteRequest("/user/" + groupId);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

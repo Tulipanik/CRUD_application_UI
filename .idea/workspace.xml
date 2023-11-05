@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6ab5b2a7-885e-4787-9f6c-a023583c8289" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_15_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_15_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_15_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Services/NotesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/NotesServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/HttpRequest/NotesServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Services/NotesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Services/NotesService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/NotesServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/HttpRequest/NotesServiceTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2XRlmpXDnD6gRDRZxXIVlz3spEs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunManager" selected="JUnit.NotesServiceTest.AddCorrectData">
+    <configuration name="NotesServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrudUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.HttpRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotesServiceTest.AddCorrectData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrudUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.HttpRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
+      <option name="METHOD_NAME" value="AddCorrectData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotesServiceTest.GetNoteByIncorrectId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrudUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.HttpRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
+      <option name="METHOD_NAME" value="GetNoteByIncorrectId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrudUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.HttpRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
+      <option name="METHOD_NAME" value="UpdateNoteByCorrectIdAndCorrectGroupId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotesServiceTest.UpdateNoteByIncorrectIdAndCorrectGroupId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CrudUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.HttpRequest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.HttpRequest" />
+      <option name="MAIN_CLASS_NAME" value="org.example.HttpRequest.NotesServiceTest" />
+      <option name="METHOD_NAME" value="UpdateNoteByIncorrectIdAndCorrectGroupId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.NotesServiceTest.GetNoteByIncorrectId" />
+      <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" />
+      <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByIncorrectIdAndCorrectGroupId" />
+      <item itemvalue="JUnit.NotesServiceTest" />
+      <item itemvalue="JUnit.NotesServiceTest.AddCorrectData" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.NotesServiceTest.AddCorrectData" />
+        <item itemvalue="JUnit.NotesServiceTest" />
+        <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByIncorrectIdAndCorrectGroupId" />
+        <item itemvalue="JUnit.NotesServiceTest.UpdateNoteByCorrectIdAndCorrectGroupId" />
+        <item itemvalue="JUnit.NotesServiceTest.GetNoteByIncorrectId" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6ab5b2a7-885e-4787-9f6c-a023583c8289" name="Changes" comment="" />
+      <created>1698599936265</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698599936265</updated>
+      <workItem from="1698761221771" duration="6661000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/Library/Java/JavaVirtualMachines/corretto-17.0.3/Contents/Home/lib/src.zip!/java.base/java/net/HttpURLConnection.java</url>
+          <line>517</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
